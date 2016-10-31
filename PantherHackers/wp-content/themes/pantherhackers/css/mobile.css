@@ -1,0 +1,294 @@
+.mobile-top-nav-area{
+	display:none;
+	position: absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	z-index:101;
+	text-align: left;
+	font-size:1.5em;
+	padding:25px;
+	color:#fff;
+}
+
+.mobile-top-nav-area .overlay-top{
+	opacity: .8;
+}
+
+.mobile-top-nav-area .close-button{
+	text-align: right;
+	font-size:1.2em;	
+	cursor: pointer;
+}
+
+.mobile-top-nav p{
+	margin: 15px 0;
+}
+
+.mobile-top-nav a{
+	color:#fff;
+}
+
+.mobile-top-nav .separator{
+	height:0;
+	width:100%;
+	border-bottom:1px solid #eee;
+}
+
+.mobile-top-nav ul a{
+	margin-left:30px;
+	font-size:.9em;
+	padding:10px 0;
+}
+
+.mobile-top-nav .social-media{
+	text-align: center;
+}
+
+.mobile-top-nav .social-media a{
+	margin:0 20px;
+	font-size:1.3em;	
+}
+
+.mobile-hamburger-area{
+	float: right;
+	display:none;
+}
+.mobile-hamburger-area .btn{
+	border:0;
+	font-size:1.2em;
+}
+
+.mobile-stack{
+	float:none;
+	width:100%;
+	margin-right:0;
+	display: block;
+}
+
+/*******
+*** TOP NAVIGATION
+*******/
+
+@media(max-width: 502px){
+	.top-page-header .logo-area{
+		padding:5px 0;
+	}
+
+	.top-page-header .logo-area .logo{
+		max-width: 225px;
+	}
+}
+
+
+@media(max-width:1022px){
+	.top-page-header .navigation-area,
+	.top-page-header .social-media-area{
+		display: none;
+	}
+
+	.top-page-header .logo-area{
+		padding:3px 0 0;
+	}
+
+	.top-page-header .mobile-hamburger-area{
+		display:block;
+	}
+}
+
+/*******
+*** HOME PAGE
+*******/
+
+@media(max-width:470px){
+	.pitch-group{
+		margin-top:30%;
+		margin-bottom:30%;	
+	}
+	
+	.pitch-group h1{
+		font-size:2.5em;
+	}
+	.pitch-group h2{
+		font-size:1.5em;
+	}
+}
+
+
+/*******
+*** ABOUT PAGE
+*******/
+
+@media(max-width:840px){
+	.team-image{
+		max-width:40%;
+		margin:50px auto;
+	}
+
+	.team-image:last-child{
+		margin-right:auto;
+	}
+
+	.team-image figcaption{
+		font-size:1.8em;
+		top:35%;
+		left:22%;
+		margin:0;
+	}
+}
+
+@media(max-width:679px){
+	.about-section .about-contact-info{
+		display:none;
+	}
+}
+
+@media(max-width:520px){
+	.team-image{
+		max-width: 60%;
+	}
+
+	.team-image figcaption{
+		font-size:1.4em;
+		top: 33%;
+	    left: 19%;
+	}
+}
+
+
+@media(max-width: 430px){
+	.team-image figcaption{
+		font-size:1.2em;
+		top:30%;	
+	}
+}
+
+@media(max-width: 320px){
+	.about-section + div .wrapper{
+		padding-left:0;
+		padding-right:0;
+	}
+	
+	.team-image figcaption{
+		left:15%;	
+	}
+}
+/*******
+*** EVENTS PAGE
+*******/
+
+@media(max-width:645px){
+	.event-list .event{
+		text-align: center;
+		margin-bottom:65px;
+		padding-left:30px;
+		padding-right:30px;
+	}
+
+	.event-list .event:first-child{
+		margin-bottom: 65px;
+		padding-top:50px;
+	}
+
+	.event-list .event-time{
+		width:60%;
+		margin:0 auto;
+	}
+
+	.event-list .event-time hr{
+		width:30%;
+	}
+}
+
+@media(max-width:420px){
+	.event-list .event{
+		padding-left:10px;
+		padding-right:10px;
+	}
+}
+
+
+/*******
+*** BLOG PAGE
+*******/
+@media(max-width: 700px){
+	.blog-post figcaption{
+		width:52%;
+	}
+}
+
+@media(max-width: 500px){
+	.blog-post figcaption{
+		width:90%;
+	}
+}
+
+/*******
+*** INDIVIDUAL BLOG POST PAGE
+*******/
+
+@media(max-width:1357px){
+	.post-image-area .post-info.overlay-bottom{
+		top:16%;	
+	}
+}
+
+@media(max-width:1035px){
+	.post-image-area .post-info.overlay-bottom{
+		top:10%;	
+	}
+	
+	.post-image-area .post-info .title{
+		font-size:3em;
+	}
+}
+
+
+@media(max-width:822px){
+	.single-blog-post .post-content{
+		top:-30px;	
+		padding-left:35px;
+		padding-right:35px;
+	}
+	
+	.post-image-area .post-info.overlay-bottom{
+		top:7%;	
+	}
+	
+	.post-image-area .post-info .title{
+		font-size:2em;
+	}
+}
+
+@media(max-width:400px){
+	.single-blog-post .post-content{
+		top:-15px;
+	}
+	
+	.post-image-area .post-info.overlay-bottom{
+		top:0%;	
+	}
+	
+	.post-image-area .post-info .title{
+		font-size:2em;
+		margin-bottom:0px;
+		margin-top:10px;
+	}
+}
+/*******
+*** COMPONENTS
+*******/
+@media(max-width:645px){
+	.category-list .category-item,
+	.category-list .separator{
+		display:none;
+	}
+}
+
+@media(max-width:375px){
+	.wrapper{
+		padding-left:20px;
+		padding-right:20px;
+	}
+}
