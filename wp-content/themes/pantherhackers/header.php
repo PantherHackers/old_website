@@ -1,3 +1,4 @@
+<?php if(is_home() && $_POST){ $message = member_save();} ?>
 <html>
 	<head>
 		<title><?php bloginfo('name'); ?></title>
@@ -14,6 +15,88 @@
 		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/mobile.css" type="text/css"/>
 	</head>
 	<body>
+		<style type="text/css">
+			@keyframes popup {
+				from {top:-21px;}
+				to {top:0px;}
+			}
+			.subscribe-form {
+				display:inline-flex;
+				flex-flow:column nowrap;
+				width:350px;
+			}
+			.subscribe-form label {
+				color:white;
+				font-size:18pt;
+				font-weight:normal;
+			}
+			.subscribe-form .subscribe-fields {
+				background:#eee;
+				display:inline-flex;
+				flex-flow:column nowrap;
+				padding:5px;
+				border-radius:5px;
+				z-index:1;
+			}
+			.subscribe-form .name-field {
+				border:none;
+				outline:none;
+				background:none;
+				padding:10px 5px;
+				margin:0 2.5%;
+			}
+			.subscribe-form hr {
+				margin:5px auto;
+				width:97%;
+				border-top:1px solid #bbb;
+				display:block;
+			}
+			.subscribe-form .email-field {
+				border:none;
+				outline:none;
+				background:none;
+				padding:10px 5px;
+				margin:0 2.5%;
+			}
+			.submit-button {
+				border:none;
+				outline:none;
+				border-radius:3px;
+				padding:7px 10px;
+				margin-top:5px;
+				background-color:#4c94dc;
+				color:white;
+				transition:.3s all ease-in-out;
+			}
+			.submit-button:hover {
+				background-color:#6cb4fc;
+			}
+			.button-x2 {
+				padding:12px 15px;
+				font-size: 2.5rem;
+			}
+			.subscribe-form .message {
+				display:inline-block;
+				position:relative;
+				margin-top:-5px;
+				padding-top:5px;
+				z-index:0;
+				border-radius:0 0 5px 5px;
+				animation: popup 0.3s cubic-bezier(.17,.67,.69,1.33) forwards;
+			}
+			.subscribe-form .message.success {
+				color:rgb(0,123,0);
+				background-color:rgba(100,233,100,0.8);
+			}
+			.subscribe-form .message.error {
+				color:rgb(180,26,0);
+				background-color:rgba(255,120,110,0.8);
+			}
+
+			.main-event {
+				margin-bottom:9%;
+			}
+		</style>
 		<?php if (is_home()): ?>
 			<div class="overlay-group">
 				<div class="overlay-top"></div>
@@ -76,15 +159,35 @@
 				</div>
 				
 				<?php if(is_home()): ?>
-					<hgroup class="pitch-group">
+					<hgroup class="pitch-group" style="margin-top: 12%;">
 						<h1>PantherHackers</h1>
 						<h2 style="text-transform:capitalize;">Simple Solutions for Complex Problems</h2>
 					</hgroup>
-					<div class="more-area">
-						<a style="padding: 14px 47px; font-size: 1.05em;" href="http://pantherhackers.com/news/" class="btn">
-							Sign up for our weekly newsletter!
-						</a>
-					</div>
+					<hgroup class="main-event">
+						<a class="submit-button button-x2" href="https://www.eventbrite.com/e/pantherhackers-meeting-1-tickets-31292788573">RSVP for Meeting[1]</a>
+					</hgroup>
+
+					<form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="POST" class="subscribe-form">
+						<?php wp_nonce_field( 'secretkeywordissecretkeywordpantherhackers', 'member_save_content_nonce' ); ?>
+						<label>Sign up for news</label>
+						<div class="subscribe-fields">
+  							<input type="text" placeholder="Steve Jobs" class="name-field" name="user_name"><hr>
+							<input type="text" placeholder="sjobs2@student.gsu.edu" class="email-field" name="panther_id">
+							<input type="submit" value="SUBSCRIBE" class="submit-button">
+						</div>
+						<?php if($_POST): ?>
+							<?php if(isset($message['error'])): ?>
+								<span class="message error">
+									<?php echo $message['error']; ?>
+								</span>
+							<?php elseif(isset($message['success'])): ?>
+								<span class="message success">
+									<?php echo $message['success']; ?>
+								</span>
+							<?php endif ?>
+						<?php endif; ?>
+						<input type="hidden" name="experience" value="A little bit">
+					</form>
 				<?php endif; ?>
 			</div>
 

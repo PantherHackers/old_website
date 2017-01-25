@@ -148,7 +148,7 @@ function member_save(){
 
 	if(!preg_match("/^[A-z0-9]+@(student\.)?gsu\.edu/",$panther_id))
 		return array('error' => "Please enter a valid GSU email address (@gsu.edu or @student.gsu.edu)");
-		
+	
 	global $user_ID;
 	$new_post = array(
 		'post_title' => $name,
